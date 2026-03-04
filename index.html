@@ -98,7 +98,7 @@
             <td>기기 내 저장</td>
         </tr>
     </table>
-    <p>앱은 위 정보를 <strong>외부 서버로 전송하지 않습니다.</strong></p>
+    <p>위 정보는 사용자의 기기에만 저장되며, 앱 자체 서버로 전송하지 않습니다. 단, 아래 4항에 명시된 제3자 SDK(Google AdMob)는 광고 제공을 위해 별도의 정보를 수집할 수 있습니다.</p>
 
     <h2>2. 정보의 저장 및 보안</h2>
     <ul>
@@ -122,12 +122,20 @@
             <td>로컬 네트워크 TV 검색</td>
         </tr>
         <tr>
+            <td>네트워크 상태(ACCESS_NETWORK_STATE)</td>
+            <td>네트워크 연결 상태 확인</td>
+        </tr>
+        <tr>
+            <td>멀티캐스트(CHANGE_WIFI_MULTICAST_STATE)</td>
+            <td>mDNS 기반 TV 자동 검색</td>
+        </tr>
+        <tr>
             <td>근처 기기(NEARBY_WIFI_DEVICES)</td>
-            <td>Android 13 이상 로컬 네트워크 접근</td>
+            <td>로컬 네트워크상의 TV 기기 검색 및 통신을 위해 사용(Android 13 이상)</td>
         </tr>
         <tr>
             <td>위치(ACCESS_FINE_LOCATION)</td>
-            <td>Android 12 이하 Wi-Fi 스캔 (시스템 요구)</td>
+            <td>Wi-Fi 스캔을 통한 기기 검색을 위해 시스템적으로 요구되는 권한이며 실제 사용자의 위치 정보를 수집하거나 저장하지 않습니다</td>
         </tr>
         <tr>
             <td>진동(VIBRATE)</td>
@@ -136,19 +144,41 @@
     </table>
 
     <h2>4. 제3자 SDK (Google AdMob)</h2>
-    <p>앱은 광고 표시를 위해 <strong>Google AdMob</strong>을 사용합니다. AdMob은 Google의 개인정보처리방침에 따라 광고 식별자 등의 정보를 수집할 수 있습니다.</p>
+    <p>앱은 광고 표시를 위해 <strong>Google AdMob</strong> SDK를 포함하고 있으며, AdMob은 Google의 개인정보처리방침에 따라 다음 정보를 Google 서버로 수집·전송할 수 있습니다.</p>
+    <ul>
+        <li>광고 식별자 (Advertising ID)</li>
+        <li>기기 정보 (모델명, OS 버전 등)</li>
+        <li>광고 상호작용 데이터 (노출, 클릭 등)</li>
+    </ul>
+    <p>이는 앱 개발자가 아닌 Google에 의해 처리되며, 자세한 내용은 아래를 참고하세요.</p>
     <ul>
         <li>Google 개인정보처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
-        <li>광고 개인최적화는 기기 설정에서 비활성화할 수 있습니다.</li>
+        <li>Google 광고 파트너 정책: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">https://policies.google.com/technologies/partner-sites</a></li>
+        <li>광고 개인최적화는 기기 설정 > Google > 광고에서 비활성화할 수 있습니다.</li>
     </ul>
 
-    <h2>5. 아동의 개인정보</h2>
+    <h2>5. 데이터 보관 및 삭제</h2>
+    <ul>
+        <li>앱에서 수집한 모든 데이터는 사용자 기기에만 저장되며, 외부 서버에 보관되지 않습니다.</li>
+        <li>앱을 삭제하면 저장된 모든 데이터(TV 기기 정보, 인증 토큰, 설정값)가 자동으로 삭제됩니다.</li>
+        <li>앱 내 설정 화면에서 저장된 TV 기기 정보를 개별적으로 삭제할 수 있습니다.</li>
+    </ul>
+
+    <h2>6. 이용자의 권리</h2>
+    <p>사용자는 언제든지 다음과 같은 권리를 행사할 수 있습니다.</p>
+    <ul>
+        <li><strong>데이터 열람:</strong> 앱 설정 화면에서 저장된 기기 목록을 확인할 수 있습니다.</li>
+        <li><strong>데이터 삭제:</strong> 앱 설정에서 개별 기기를 삭제하거나, 앱 자체를 삭제하여 모든 데이터를 제거할 수 있습니다.</li>
+        <li><strong>권한 철회:</strong> 기기 설정에서 앱에 부여한 권한을 언제든지 변경하거나 철회할 수 있습니다.</li>
+    </ul>
+
+    <h2>7. 아동의 개인정보</h2>
     <p>앱은 만 14세 미만 아동을 대상으로 하지 않으며, 의도적으로 아동의 개인정보를 수집하지 않습니다.</p>
 
-    <h2>6. 개인정보 처리방침 변경</h2>
+    <h2>8. 개인정보 처리방침 변경</h2>
     <p>본 방침이 변경될 경우 이 페이지를 통해 공지하며, 변경 사항은 게시 즉시 효력이 발생합니다.</p>
 
-    <h2>7. 문의</h2>
+    <h2>9. 문의</h2>
     <p>개인정보 관련 문의사항은 아래로 연락해 주세요.</p>
     <ul>
         <li>이메일: <a href="mailto:biz.honeyholic@gmail.com">biz.honeyholic@gmail.com</a></li>
